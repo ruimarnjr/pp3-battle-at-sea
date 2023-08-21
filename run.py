@@ -93,6 +93,17 @@ class BattleshipGame:
         if self.enemy_board[target_row][target_col] == 'X':
             print("You've already hit that location.")
             return
+        elif self.enemy_board[target_row][target_col] == '-':
+            print("You've already missed that location.")
+            return
+        elif self.board[target_row][target_col] == 'X':
+            print("Hit! You sunk an enemy ship!")
+            self.enemy_board[target_row][target_col] = 'X'
+            self.player_shots_remaining -= 1
+            print(f"You have {self.player_shots_remaining} missiles left.")
+
+
+
 
 
 
