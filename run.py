@@ -147,6 +147,10 @@ class BattleshipGame:
                 if 'A' <= target_col_input <= 'H':
                     target_col = letter_to_number(target_col_input)
                     break
+                else:
+                    print("Please enter a column letter between A and H.")
+            except ValueError:
+                print("Invalid input. Please enter a valid column letter.")
 
 def main():
     print("Welcome to Battle at Sea!")
