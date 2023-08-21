@@ -21,3 +21,6 @@ def main():
             entered_password = input("Enter your password: ")
             game_filename = username + '.pkl'
             if check_password(username, entered_password):
+                game = BattleshipGame.load_state(game_filename)
+                game.print_boards()
+                game.play()
