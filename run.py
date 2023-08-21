@@ -53,7 +53,14 @@ class BattleshipGame:
         print("\nEnemy's Board:")
         self.print_board(self.enemy_board)
 
-
+    def reset_boards(self):
+        self.board = [[' ' for _ in range(self.board_size)]
+                      for _ in range(self.board_size)]
+        self.enemy_board = [[' ' for _ in range(self.board_size)]
+                            for _ in range(self.board_size)]
+        self.create_ships()
+        self.player_shots_remaining = 5
+        self.computer_shots_remaining = 5
 
 
 
