@@ -19,6 +19,15 @@ class BattleshipGame:
         self.player_shots_remaining = 5
         self.computer_shots_remaining = 5
 
+    def create_ships(self):
+        for _ in range(self.ships):
+            ship_row = random.randint(0, self.board_size - 1)
+            ship_col = random.randint(0, self.board_size - 1)
+            while self.board[ship_row][ship_col] == 'X':
+                ship_row = random.randint(0, self.board_size - 1)
+                ship_col = random.randint(0, self.board_size - 1)
+            self.board[ship_row][ship_col] = 'X'
+
 def main():
     print("Welcome to Battle at Sea!")
 
