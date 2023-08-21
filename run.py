@@ -1,6 +1,9 @@
 import random
 import pickle
 
+def letter_to_number(letter):
+    return ord(letter) - ord('A')
+
 def main():
     print("Welcome to Battle at Sea!")
 
