@@ -101,6 +101,11 @@ class BattleshipGame:
             self.enemy_board[target_row][target_col] = 'X'
             self.player_shots_remaining -= 1
             print(f"You have {self.player_shots_remaining} missiles left.")
+        else:
+            print("Miss. No enemy ship at that location.")
+            self.enemy_board[target_row][target_col] = '-'
+            self.player_shots_remaining -= 1
+            print(f"You have {self.player_shots_remaining} missiles left.")
 
 
 
