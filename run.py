@@ -88,7 +88,11 @@ class BattleshipGame:
             print("You are out of missiles.")
             return
 
+        target_row, target_col = self.get_user_target()
 
+        if self.enemy_board[target_row][target_col] == 'X':
+            print("You've already hit that location.")
+            return
 
 
 
