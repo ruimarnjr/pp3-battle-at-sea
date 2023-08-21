@@ -83,6 +83,11 @@ class BattleshipGame:
         else:
             print("It's a draw! Both sides have the same number of hits.")
 
+    def player_turn(self):
+        if self.player_shots_remaining == 0:
+            print("You are out of missiles.")
+            return
+
 
 
 
