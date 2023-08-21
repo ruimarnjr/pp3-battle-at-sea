@@ -72,6 +72,46 @@ class BattleshipGame:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     def computer_turn(self):
+        if self.computer_shots_remaining == 0:
+            print("The enemy is out of missiles.")
+            return
+
 def main():
     print("Welcome to Battle at Sea!")
 
