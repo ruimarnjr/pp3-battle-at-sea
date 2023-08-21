@@ -122,6 +122,9 @@ class BattleshipGame:
         if self.board[computer_row][computer_col] == 'X':
             print("Computer hit your ship!")
             self.board[computer_row][computer_col] = 'C'
+        else:
+            print("Computer missed your ships!")
+            self.board[computer_row][computer_col] = '-'
 
 
 
