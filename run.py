@@ -24,3 +24,7 @@ def main():
                 game = BattleshipGame.load_state(game_filename)
                 game.print_boards()
                 game.play()
+            else:
+                print("Invalid password.You can't continue the existing game.")
+        else:
+            print("Invalid input. Please enter Y or N.")
