@@ -70,7 +70,18 @@ class BattleshipGame:
             if self.computer_shots_remaining > 0:
                 self.computer_turn()
 
+        self.print_boards()  # Print the final boards
 
+        player_hits = sum(row.count('X') for row in self.enemy_board)
+        computer_hits = sum(row.count('C') for row in self.board)
+
+        print("Game over.")
+        if player_hits > computer_hits:
+            print("Congratulations! You win with more hits!")
+        elif computer_hits > player_hits:
+            print("Computer wins with more hits!")
+        else:
+            print("It's a draw! Both sides have the same number of hits.")
 
 
 
