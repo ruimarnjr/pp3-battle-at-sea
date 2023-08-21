@@ -8,6 +8,15 @@ def letter_to_number(letter):
 
 class BattleshipGame:
 
+    def __init__(self):
+        self.board_size = 8
+        self.board = [[' ' for _ in range(self.board_size)]
+                      for _ in range(self.board_size)]
+        self.enemy_board = [[' ' for _ in range(self.board_size)]
+                            for _ in range(self.board_size)]
+        self.ships = 30
+        self.create_ships()
+
 def main():
     print("Welcome to Battle at Sea!")
 
