@@ -112,6 +112,31 @@ class BattleshipGame:
             print("The enemy is out of missiles.")
             return
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   def get_user_target(self):
+        while True:
+            try:
+                target_row = int(input("Enter target row (1-8): ")) - 1
+                if 0 <= target_row < self.board_size:
+                    break
+
 def main():
     print("Welcome to Battle at Sea!")
 
