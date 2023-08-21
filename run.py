@@ -136,7 +136,7 @@ class BattleshipGame:
                 target_row = int(input("Enter target row (1-8): ")) - 1
                 if 0 <= target_row < self.board_size:
                     break
-                    else:
+                else:
                     print("Please enter a row number between 1 and 8.")
             except ValueError:
                 print("Invalid input. Please enter a valid row number.")
