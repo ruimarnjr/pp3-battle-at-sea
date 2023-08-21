@@ -166,24 +166,36 @@ def main():
         new_user = input("Are you a new user? (Y/N): ").upper()
 
         if new_user == 'Y':
-            print("Welcome to Battleship! Let's set up your game.")
+            print("Welcome to Battle at Sea! Let's set up your game.")
             username = input("Enter your username: ")
             password = input("Enter your password: ")
+            stored_passwords[username] = password
+            with open("passwords.pkl", "wb") as f:
+                pickle.dump(stored_passwords, f)
+
             game = BattleshipGame()
-            game.reset_boards()  # Resetting the boards here
+            game.reset_boards()
             game.save_state(username + '.pkl')
             game.play()
         elif new_user == 'N':
-            print("Welcome back! Let's continue your existing game.")
             username = input("Enter your username: ")
             entered_password = input("Enter your password: ")
             game_filename = username + '.pkl'
-            if check_password(username, entered_password):
-                game = BattleshipGame.load_state(game_filename)
-                game.print_boards()
-                game.play()
+
+            # Check if the entered username exists in stored passwords
+            if username in stored_passwords:
+                stored_password = stored_passwords[username]
+
+                # Compare the entered password with the stored password
+                if entered_password == stored_password:
+                    game = BattleshipGame.load_state(game_filename)
+                    print("Password verified.")
+                    game.play()
+                else:
+                    print("Invalid password.")
             else:
-                print("Invalid password.You can't continue the existing game.")
+                print("User not found. Please sign up as a new user.")
+
         else:
             print("Invalid input. Please enter Y or N.")
 
@@ -191,6 +203,9 @@ def main():
         if play_again != 'Y':
             print("Goodbye!")
             break
+
+
+stored_passwords = {}
 
 
 def check_password(username, entered_password):
