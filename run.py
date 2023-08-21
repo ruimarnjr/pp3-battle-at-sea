@@ -28,6 +28,16 @@ class BattleshipGame:
                 ship_col = random.randint(0, self.board_size - 1)
             self.board[ship_row][ship_col] = 'X'
 
+    def print_board(self, board, hide_ships=False):
+        print('  A B C D E F G H')
+        print('  ***************')
+        row_num = 1
+        for row in board:
+            cells = [' 'if hide_ships and cell == 'X'else cell for cell in row]
+            formatted_row = f"{row_num}|{'|'.join(cells)}|"
+            print(formatted_row)
+            row_num += 1
+
 def main():
     print("Welcome to Battle at Sea!")
 
