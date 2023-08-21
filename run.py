@@ -126,6 +126,10 @@ class BattleshipGame:
             print("Computer missed your ships!")
             self.board[computer_row][computer_col] = '-'
 
+        self.computer_shots_remaining -= 1
+
+        return True
+
 
 
 
