@@ -141,6 +141,13 @@ class BattleshipGame:
             except ValueError:
                 print("Invalid input. Please enter a valid row number.")
 
+        while True:
+            try:
+                target_col_input = input("Enter target column (A-H): ").upper()
+                if 'A' <= target_col_input <= 'H':
+                    target_col = letter_to_number(target_col_input)
+                    break
+
 def main():
     print("Welcome to Battle at Sea!")
 
