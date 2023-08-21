@@ -16,6 +16,8 @@ class BattleshipGame:
                             for _ in range(self.board_size)]
         self.ships = 30
         self.create_ships()
+        self.player_shots_remaining = 5
+        self.computer_shots_remaining = 5
 
 def main():
     print("Welcome to Battle at Sea!")
