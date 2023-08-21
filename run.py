@@ -119,6 +119,10 @@ class BattleshipGame:
             computer_row = random.randint(0, self.board_size - 1)
             computer_col = random.randint(0, self.board_size - 1)
 
+        if self.board[computer_row][computer_col] == 'X':
+            print("Computer hit your ship!")
+            self.board[computer_row][computer_col] = 'C'
+
 
 
 
