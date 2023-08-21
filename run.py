@@ -107,43 +107,7 @@ class BattleshipGame:
             self.player_shots_remaining -= 1
             print(f"You have {self.player_shots_remaining} missiles left.")
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     def computer_turn(self):
+    def computer_turn(self):
         if self.computer_shots_remaining == 0:
             print("The enemy is out of missiles.")
             return
@@ -175,6 +139,11 @@ def main():
                 print("Invalid password.You can't continue the existing game.")
         else:
             print("Invalid input. Please enter Y or N.")
+
+        play_again = input("Would you like to play it again? (Y/N): ").upper()
+        if play_again != 'Y':
+            print("Goodbye!")
+            break
 
 
 if __name__ == "__main__":
