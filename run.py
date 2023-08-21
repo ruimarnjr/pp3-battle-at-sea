@@ -6,3 +6,12 @@ def main():
 
     while True:
         new_user = input("Are you a new user? (Y/N): ").upper()
+
+        if new_user == 'Y':
+            print("Welcome to Battleship! Let's set up your game.")
+            username = input("Enter your username: ")
+            password = input("Enter your password: ")
+            game = BattleshipGame()
+            game.reset_boards()  # Resetting the boards here
+            game.save_state(username + '.pkl')
+            game.play()
