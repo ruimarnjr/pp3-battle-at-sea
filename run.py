@@ -53,6 +53,25 @@ class BattleshipGame:
         print("\nEnemy's Board:")
         self.print_board(self.enemy_board)
 
+
+
+
+
+
+
+
+
+
+    def play(self):
+        while self.player_shots_remaining > 0 or \
+         self.computer_shots_remaining > 0:
+            self.print_boards()
+            self.player_turn()
+            if self.computer_shots_remaining > 0:
+                self.computer_turn()
+
+
+
 def main():
     print("Welcome to Battle at Sea!")
 
