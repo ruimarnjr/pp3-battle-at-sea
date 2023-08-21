@@ -62,13 +62,6 @@ class BattleshipGame:
         self.player_shots_remaining = 5
         self.computer_shots_remaining = 5
 
-
-
-
-
-
-
-
     def play(self):
         while self.player_shots_remaining > 0 or \
          self.computer_shots_remaining > 0:
@@ -146,3 +139,7 @@ def main():
                 print("Invalid password.You can't continue the existing game.")
         else:
             print("Invalid input. Please enter Y or N.")
+
+
+if __name__ == "__main__":
+    main()
