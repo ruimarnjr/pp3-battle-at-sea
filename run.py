@@ -112,6 +112,9 @@ class BattleshipGame:
             print("The enemy is out of missiles.")
             return
 
+        computer_row = random.randint(0, self.board_size - 1)
+        computer_col = random.randint(0, self.board_size - 1)
+
 
 
 
@@ -157,6 +160,7 @@ class BattleshipGame:
             return self.get_user_target()  # Prompt again for a new target
         else:
             return target_row, target_col
+
 
 def main():
     print("Welcome to Battle at Sea!")
