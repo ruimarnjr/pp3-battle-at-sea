@@ -38,6 +38,21 @@ class BattleshipGame:
             print(formatted_row)
             row_num += 1
 
+    def save_state(self, filename):
+        with open(filename, 'wb') as file:
+            pickle.dump(self, file)
+
+    @classmethod
+    def load_state(cls, filename):
+        with open(filename, 'rb') as file:
+            return pickle.load(file)
+
+    def print_boards(self):
+        print("Your Board:")
+        self.print_board(self.board, hide_ships=True)
+        print("\nEnemy's Board:")
+        self.print_board(self.enemy_board)
+
 def main():
     print("Welcome to Battle at Sea!")
 
