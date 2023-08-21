@@ -152,6 +152,12 @@ class BattleshipGame:
             except ValueError:
                 print("Invalid input. Please enter a valid column letter.")
 
+        if self.enemy_board[target_row][target_col] in ['X', '-']:
+            print("You have already fired on that location. Choose another.")
+            return self.get_user_target()  # Prompt again for a new target
+        else:
+            return target_row, target_col
+
 def main():
     print("Welcome to Battle at Sea!")
 
