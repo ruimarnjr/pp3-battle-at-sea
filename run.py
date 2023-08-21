@@ -130,25 +130,7 @@ class BattleshipGame:
 
         return True
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   def get_user_target(self):
+    def get_user_target(self):
         while True:
             try:
                 target_row = int(input("Enter target row (1-8): ")) - 1
@@ -209,6 +191,14 @@ def main():
         if play_again != 'Y':
             print("Goodbye!")
             break
+
+
+def check_password(username, entered_password):
+    stored_passwords = {
+        "user1": "password1",
+        "user2": "password2"
+    }  # Replace with your logic
+    return stored_passwords.get(username) == entered_password
 
 
 if __name__ == "__main__":
