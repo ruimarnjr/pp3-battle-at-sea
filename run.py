@@ -115,6 +115,10 @@ class BattleshipGame:
         computer_row = random.randint(0, self.board_size - 1)
         computer_col = random.randint(0, self.board_size - 1)
 
+        while self.enemy_board[computer_row][computer_col] in ['X', '-']:
+            computer_row = random.randint(0, self.board_size - 1)
+            computer_col = random.randint(0, self.board_size - 1)
+
 
 
 
