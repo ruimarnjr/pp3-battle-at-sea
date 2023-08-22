@@ -168,9 +168,11 @@ class BattleshipGame:
         while True:
             try:
                 target_col_input = input("Enter target column (A-H): ").upper()
-                if 'A' <= target_col_input <= 'H':
+                if 'A' <= target_col_input <= 'H' == len(target_col_input):
                     target_col = letter_to_number(target_col_input)
                     break
+                elif len(target_col_input) > 1:
+                    print("Please enter a single column letter.")
                 else:
                     print("Please enter a column letter between A and H.")
             except ValueError:
