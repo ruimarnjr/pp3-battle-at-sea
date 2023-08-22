@@ -14,10 +14,10 @@ class BattleshipGame:
                       for _ in range(self.board_size)]
         self.enemy_board = [[' ' for _ in range(self.board_size)]
                             for _ in range(self.board_size)]
-        self.ships = 30
+        self.ships = 10
         self.create_ships()
-        self.player_shots_remaining = 5
-        self.computer_shots_remaining = 5
+        self.player_shots_remaining = 25
+        self.computer_shots_remaining = 25
 
     def create_ships(self):
         for _ in range(self.ships):
@@ -59,8 +59,8 @@ class BattleshipGame:
         self.enemy_board = [[' ' for _ in range(self.board_size)]
                             for _ in range(self.board_size)]
         self.create_ships()
-        self.player_shots_remaining = 5
-        self.computer_shots_remaining = 5
+        self.player_shots_remaining = 25
+        self.computer_shots_remaining = 25
 
     def play(self):
         while self.player_shots_remaining > 0 or \
