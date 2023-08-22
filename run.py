@@ -163,12 +163,12 @@ def main():
     print("Welcome to Battle at Sea!")
 
     while True:
-        new_user = input("Are you a new user? (Y/N): ").upper()
+        new_user = input("Are you a new user? (Y/N): \n").upper()
 
         if new_user == 'Y':
             print("Welcome to Battle at Sea! Let's set up your game.")
-            username = input("Enter your username: ")
-            password = input("Enter your password: ")
+            username = input("Enter your username: \n")
+            password = input("Enter your password: \n")
             stored_passwords[username] = password
             with open("passwords.pkl", "wb") as f:
                 pickle.dump(stored_passwords, f)
@@ -178,8 +178,8 @@ def main():
             game.save_state(username + '.pkl')
             game.play()
         elif new_user == 'N':
-            username = input("Enter your username: ")
-            entered_password = input("Enter your password: ")
+            username = input("Enter your username: \n")
+            entered_password = input("Enter your password: \n")
             game_filename = username + '.pkl'
 
             # Check if the entered username exists in stored passwords
@@ -199,7 +199,7 @@ def main():
         else:
             print("Invalid input. Please enter Y or N.")
 
-        play_again = input("Would you like to play it again? (Y/N): ").upper()
+        play_again = input("Would you like to play it again? (Y/N): \n").upper()
         if play_again != 'Y':
             print("Goodbye!")
             break
