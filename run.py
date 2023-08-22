@@ -3,10 +3,16 @@ import pickle
 
 
 def letter_to_number(letter):
+    """
+    Function to convert letter coordinates to numerical indices
+    """
     return ord(letter) - ord('A')
 
 
 class BattleshipGame:
+    """
+    Represents the Battleship game and it's mechanics.
+    """
 
     def __init__(self):
         self.board_size = 8
@@ -20,6 +26,9 @@ class BattleshipGame:
         self.computer_shots_remaining = 25
 
     def create_ships(self):
+        """
+        Randomly places ships on the player's game board.
+        """
         for _ in range(self.ships):
             ship_row = random.randint(0, self.board_size - 1)
             ship_col = random.randint(0, self.board_size - 1)
@@ -29,6 +38,9 @@ class BattleshipGame:
             self.board[ship_row][ship_col] = 'X'
 
     def print_board(self, board, hide_ships=False):
+        """
+        Print the game board.
+        """
         print('  A B C D E F G H')
         print('  ***************')
         row_num = 1
@@ -48,12 +60,18 @@ class BattleshipGame:
             return pickle.load(file)
 
     def print_boards(self):
+        """
+        Print both the player's and enemy's game boards.
+        """
         print("Your Board:")
         self.print_board(self.board, hide_ships=True)
         print("\nEnemy's Board:")
         self.print_board(self.enemy_board)
 
     def reset_boards(self):
+        """
+        Reset the game boards and remaining shots for a new game.
+        """
         self.board = [[' ' for _ in range(self.board_size)]
                       for _ in range(self.board_size)]
         self.enemy_board = [[' ' for _ in range(self.board_size)]
@@ -70,7 +88,7 @@ class BattleshipGame:
             if self.computer_shots_remaining > 0:
                 self.computer_turn()
 
-        self.print_boards()  # Print the final boards
+        self.print_boards()
 
         player_hits = sum(row.count('X') for row in self.enemy_board)
         computer_hits = sum(row.count('C') for row in self.board)
@@ -84,6 +102,9 @@ class BattleshipGame:
             print("It's a draw! Both sides have the same number of hits.")
 
     def player_turn(self):
+        """
+        Handle the player's turn to target a location on the enemy's board.
+        """
         if self.player_shots_remaining == 0:
             print("You are out of missiles.")
             return
@@ -108,6 +129,9 @@ class BattleshipGame:
             print(f"You have {self.player_shots_remaining} missiles left.")
 
     def computer_turn(self):
+        """
+        Handle the computer's turn to randomly target a location on the board.
+        """
         if self.computer_shots_remaining == 0:
             print("The enemy is out of missiles.")
             return
@@ -160,6 +184,10 @@ class BattleshipGame:
 
 
 def main():
+    """
+    Main function.
+    Welcome messages for new and existing users
+    """
     print("Welcome to Battle at Sea!")
 
     while True:
@@ -199,7 +227,7 @@ def main():
         else:
             print("Invalid input. Please enter Y or N.")
 
-        play_again = input("Would you like to play it again? (Y/N): \n").upper()
+        play_again = input("Would you like to play it again? (Y/N):\n").upper()
         if play_again != 'Y':
             print("Goodbye!")
             break
@@ -212,7 +240,7 @@ def check_password(username, entered_password):
     stored_passwords = {
         "user1": "password1",
         "user2": "password2"
-    }  # Replace with your logic
+    }
     return stored_passwords.get(username) == entered_password
 
 
