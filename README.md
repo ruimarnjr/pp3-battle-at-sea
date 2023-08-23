@@ -102,7 +102,7 @@ __Play Again__
 
 ## Validator
 
-- No errors were found when pasing the code in the [Pep8 Validator](https://pep8ci.herokuapp.com/)
+- No errors were found when passing the code in the [Pep8 Validator](https://pep8ci.herokuapp.com/)
 
 <img src="docs/images/pep8.png">
 
